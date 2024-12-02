@@ -14,7 +14,7 @@ phases:
       - ECR_IMAGE_URI="${ECR_MAIN_URI}/${ECR_REPO_NAME}:${CODEBUILD_RESOLVED_SOURCE_VERSION:0:8}"
   build:
     commands:
-      - docker build -t ${ECR_REPO_NAME}:latest .
+      - docker build -t api-server-container:latest .
   post_build:
     commands:
       - docker tag ${ECR_REPO_NAME}:latest ${ECR_IMAGE_URI}
