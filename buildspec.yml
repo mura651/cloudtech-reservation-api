@@ -14,7 +14,7 @@ phases:
       - ECR_IMAGE_URI="${ECR_MAIN_URI}/${ECR_REPO_NAME}:latest"
   build:
     commands:
-      - docker build -t api-server-container:latest .
+      - docker build -t ${ECR_REPO_NAME}:latest .
   post_build:
     commands:
       - docker tag ${ECR_REPO_NAME}:latest ${ECR_IMAGE_URI}
